@@ -1,0 +1,50 @@
+body {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+.wrapper {
+    max-width: 1920px;
+    border: 2px solid red;
+}
+
+.accordion {
+    width: 700px;
+    margin: 0px auto;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.wrapper :hover {
+    color: blue;
+}
+
+.block {
+    border: 2px solid blue;
+    width: 500px;
+    height: auto;
+    margin: 0px auto;
+}
+
+.imgs {
+    width: 0px;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.block :hover + .imgs {
+    opacity: 1;
+    width: 150px;
+}
+
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+input:checked + .imgs {
+    opacity: 1;
+    width: 150px;
+}
