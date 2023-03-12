@@ -2,10 +2,6 @@ body {
     box-sizing: border-box;
 }
 
-ul {
-    list-style: none;
-}
-
 .wrapper {
     max-width: 1920px;
     border: 2px solid red;
@@ -18,10 +14,6 @@ ul {
     cursor: pointer;
 }
 
-.wrapper :hover {
-    color: blue;
-}
-
 .block {
     border: 2px solid blue;
     width: 500px;
@@ -29,22 +21,44 @@ ul {
     margin: 0px auto;
 }
 
-.imgs {
+label {
+    cursor: pointer;
+}
+
+.imgs1 , .imgs2 {
     width: 0px;
-    opacity: 0;
+    opacity: 1;
     transition: all 0.5s;
 }
 
-.block :hover + .imgs {
-    opacity: 1;
+.block :hover ~ .imgs1 {
     width: 150px;
 }
 
-input[type=checkbox] {
-    visibility: hidden;
+.block :hover ~ .imgs2 {
+    width: 150px;
 }
 
-input:checked + .imgs {
-    opacity: 1;
+.wrapper :hover .text-lab ::after {
+    content: '>';
+}
+
+
+.wrapper .block :hover ~ .text-lab ::after {
+    content: 'q';
+    transform: rotate(0.5turn);
+}
+
+input[type='radio'] {
+    width: 0px;
+    height: 0px;
+}
+
+input:checked + .imgs1 {
+    width: 150px;
+}
+
+
+input:checked + .imgs2 {
     width: 150px;
 }
