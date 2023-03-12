@@ -1,47 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:ital@1&family=Shadows+Into+Light&family=Smokum&display=swap');
+
 body {
     box-sizing: border-box;
 }
 
 .wrapper {
     max-width: 1920px;
-    border: 2px solid red;
 }
 
 .accordion {
     width: 700px;
     margin: 0px auto;
-    border: 2px solid black;
+    border: 2px solid #a9a9a9;
+    border-radius: 20px;
     cursor: pointer;
 }
 
 .block {
-    border: 2px solid blue;
+    position: relative;
     width: 500px;
     height: auto;
+    padding: 0px 15px;
     margin: 0px auto;
 }
 
 label {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: blue;
+    font-family: 'Playfair Display', serif;
     cursor: pointer;
+    padding: 20px 0px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #a9a9a9;
 }
 
-.imgs1 , .imgs2 {
+.imgs{
     display: block;
     width: 0px;
     opacity: 1;
     transition: all 0.5s;
+    margin: 0px auto 10px;
+    border-radius: 10px;
 }
 
-.block :hover ~ .imgs1 {
-    width: 150px;
-}
-
-.block :hover ~ .imgs2 {
-    width: 150px;
+.block :hover ~ .imgs {
+    width: 350px;
 }
 
 .icon {
     opacity: 0;
+    position:absolute;
+    top: 18px;
+    right: 15px;
 }
 
 .wrapper :hover .icon {
@@ -54,7 +66,7 @@ label {
 }
 
 .wrapper :hover label {
-    color: blue;
+    color: black;
 }
 
 input[type='radio'] {
@@ -67,14 +79,96 @@ input[type='radio'] {
     opacity: 0.8;
 }
 
+input:checked ~ label {
+    color: black;
+}
+
 input:checked + .icon {
     transform: rotate(90deg);
 }
 
-input:checked ~ .imgs1 {
-    width: 150px;
+input:checked ~ .imgs {
+    width: 350px;
 }
 
-input:checked ~ .imgs2 {
-    width: 150px;
+@media (min-width: 1920px) {
+    .accordion {
+        width: 900px;
+    }
+    .block {
+        width: 700px;
+    }
+    .icon {
+        top: 30px;
+        width: 30px;
+    }
+    .head {
+        font-family: 'Smokum', cursive;
+        font-size: 30px;
+    }
+    .lab {
+        font-family: 'Smokum', cursive;
+        font-size: 30px;
+    }
+    .block :hover ~ .imgs {
+        width: 550px;
+    }
+    input:checked ~ .imgs {
+        width: 550px;
+    }
+}
+
+@media (min-width: 820px) and (max-width: 1919px) {
+    .accordion {
+        width: 650px;
+    }
+    .block {
+        width: 500px;
+    }
+    .icon {
+        top: 25px;
+        width: 30px;
+    }
+    .head {
+        font-family: 'Shadows Into Light', cursive;
+        font-size: 25px;
+    }
+    .lab {
+        font-family: 'Shadows Into Light', cursive;
+        font-size: 25px;
+    }
+    .block :hover ~ .imgs {
+        width: 300px;
+    }
+    input:checked ~ .imgs {
+        width: 300px;
+    }
+}
+
+@media (max-width: 320px) {
+    .accordion {
+        width: 300px;
+    }
+    .block {
+        width: 250px;
+    }
+    .icon {
+        top: 20px;
+        right: 8px;
+        width: 25px;
+    }
+    .head {
+        font-family: 'Dancing Script', cursive;
+        font-size: 30px;
+    }
+    .lab {
+        font-family: 'Dancing Script', cursive;
+        font-size: 20px;
+    }
+    .block :hover ~ .imgs {
+        width: 200px;
+    }
+    input:checked ~ .imgs {
+        width: 200px;
+    }
 }
