@@ -26,6 +26,7 @@ label {
 }
 
 .imgs1 , .imgs2 {
+    display: block;
     width: 0px;
     opacity: 1;
     transition: all 0.5s;
@@ -39,26 +40,41 @@ label {
     width: 150px;
 }
 
-.wrapper :hover .text-lab ::after {
-    content: '>';
+.icon {
+    opacity: 0;
 }
 
+.wrapper :hover .icon {
+    opacity: 1;
+    transition: all 0.5s;
+}
 
-.wrapper .block :hover ~ .text-lab ::after {
-    content: 'q';
-    transform: rotate(0.5turn);
+.block :hover ~ .icon {
+    transform: rotate(90deg);
+}
+
+.wrapper :hover label {
+    color: blue;
 }
 
 input[type='radio'] {
+    position: absolute;
     width: 0px;
     height: 0px;
 }
 
-input:checked + .imgs1 {
+.accordion :active {
+    opacity: 0.8;
+}
+
+input:checked + .icon {
+    transform: rotate(90deg);
+}
+
+input:checked ~ .imgs1 {
     width: 150px;
 }
 
-
-input:checked + .imgs2 {
+input:checked ~ .imgs2 {
     width: 150px;
 }
