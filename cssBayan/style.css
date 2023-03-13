@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:ital@1&family=Shadows+Into+Light&family=Smokum&display=swap');
+
+html {
+    font-size: 100%;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.accordion {
+    width: 30rem;
+    margin: 0 auto;
+    border: 2px solid #a9a9a9;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.block {
+    position: relative;
+    width: 25rem;
+    height: auto;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: blue;
+    font-family: 'Playfair Display', serif;
+    cursor: pointer;
+    padding: 1em 0;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #a9a9a9;
+}
+
+.imgs{
+    display: block;
+    width: 0%;
+    opacity: 1;
+    transition: all 0.5s;
+    margin: 0px auto 1rem;
+    border-radius: 10px;
+}
+
+.block :hover ~ .imgs {
+    width: 30rem;
+}
+
+.icon {
+    opacity: 0;
+    position:absolute;
+    top: 18px;
+    right: 15px;
+}
+
+.wrapper :hover .icon {
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.block :hover ~ .icon {
+    transform: rotate(90deg);
+}
+
+.wrapper :hover label {
+    color: black;
+}
+
+input[type='radio'] {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+}
+
+.accordion :active {
+    opacity: 0.8;
+}
+
+input:checked + .text-lable {
+    color: black;
+}
+
+input:checked + .icon {
+    transform: rotate(90deg);
+}
+
+input:checked ~ .imgs {
+    width: 20rem;
+}
+
+@media (min-width: 120em) {
+    .accordion {
+        width: 60rem;
+    }
+    .block {
+        width: 50rem;
+    }
+    .icon {
+        top: 30px;
+        width: 1.5rem;
+    }
+    .head {
+        font-family: 'Smokum', cursive;
+        font-size: 2rem;
+    }
+    .lab {
+        font-family: 'Smokum', cursive;
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 51.25em) and (max-width: 119.9375em) {
+    .accordion {
+        width: 40rem;
+    }
+    .block {
+        width: 35rem;
+    }
+    .icon {
+        top: 25px;
+        width: 1.5rem;
+    }
+    .head {
+        font-family: 'Shadows Into Light', cursive;
+        font-size: 2rem;
+    }
+    .lab {
+        font-family: 'Shadows Into Light', cursive;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 20em) {
+    .accordion {
+        width: 18rem;
+    }
+    .block {
+        width: 16rem;
+    }
+    .icon {
+        top: 20px;
+        right: 8px;
+        width: 1.2rem;
+    }
+    .head {
+        font-family: 'Dancing Script', cursive;
+        font-size: 2rem;
+    }
+    .lab {
+        font-family: 'Dancing Script', cursive;
+        font-size: 1rem;
+    }
+    input:checked ~ .imgs {
+        width: 10rem;
+    }
+    .block :hover ~ .imgs {
+        width: 10rem;
+    }
+    
+}
